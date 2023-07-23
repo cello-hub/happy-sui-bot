@@ -65,6 +65,7 @@ export class MarketDifference extends Strategy {
 
     if (priceRatio * (1 - data.fee) > this.limit) {
       // The value of A is higher on the exchange than in the pool. Buy more A
+
       return [
         {
           pool: this.pool.uri,
