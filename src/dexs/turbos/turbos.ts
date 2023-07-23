@@ -10,7 +10,7 @@ import {
 } from '@mysten/sui.js'
 import BN from 'bn.js'
 import Decimal from 'decimal.js'
-import { Network, Trade, TurbosSdk } from 'turbos-clmm-sdk/dist'
+import { Network, Trade, TurbosSdk } from 'turbos-clmm-sdk'
 
 import {
   buildInputCoinForAmount,

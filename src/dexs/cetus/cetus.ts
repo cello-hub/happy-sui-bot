@@ -1,9 +1,10 @@
-import SDK, {
+import {
+  CetusClmmSDK,
   Percentage,
   SdkOptions,
   adjustForSlippage,
   d
-} from '@cetusprotocol/cetus-sui-clmm-sdk/dist'
+} from '@cetusprotocol/cetus-sui-clmm-sdk'
 import {
   JsonRpcProvider,
   SUI_CLOCK_OBJECT_ID,
@@ -24,13 +25,13 @@ function buildSdkOptions(): SdkOptions {
 }
 
 export class CetusPool extends Pool<CetusParams> {
-  private sdk: SDK
+  private sdk: CetusClmmSDK
   private provider: JsonRpcProvider
   private senderAddress: string
 
   constructor(address: string, coinTypeA: string, coinTypeB: string) {
     super(address, coinTypeA, coinTypeB)
-    this.sdk = new SDK(buildSdkOptions())
+    this.sdk = new CetusClmmSDK(buildSdkOptions())
     this.sdk.senderAddress = keypair.getPublicKey().toSuiAddress()
 
     this.provider = new JsonRpcProvider(mainnetConnection)
