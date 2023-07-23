@@ -1,3 +1,5 @@
+import { logger } from './logger'
+
 interface User {
   name: string
 }
@@ -5,3 +7,5 @@ interface User {
 const user: User = { name: 'John' }
 
 console.log(user)
+
+logger.debug(user)
