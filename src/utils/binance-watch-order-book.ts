@@ -1,4 +1,4 @@
-import ccxt from 'ccxt/js/ccxt'
+import ccxt from 'ccxt'
 
 const exchange = new ccxt.pro.binance({ enableRateLimit: true })
 
